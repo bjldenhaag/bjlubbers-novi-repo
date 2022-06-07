@@ -1,0 +1,87 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* Font and background color */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #ffefdb;
+}
+
+/* Grid declaration, gap specification and mobile grid layout (mobile-first design) */
+.container {
+  padding: 16px;
+  display: grid;
+  gap: 16px;
+  /* MOBILE design */
+  /* grid-template-columns: 1fr;
+    grid-template-rows: 50px auto repeat(5, 50px);
+    grid-template-areas:
+      "a"
+      "b"
+      "c"
+      "d"
+      "e"
+      "."
+      "f"; */
+  /* SHORTHAND syntax */
+  grid-template: "a"50px "b"auto "c"50px "d"50px "e"50px "."50px "f"50px / 1fr;
+}
+
+@media screen and (max-width: 575px) {
+  .container {
+    width: 100%;
+  }
+}
+
+.item {
+  background-color: #ba3b44;
+  border: 2px solid #932f37;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px;
+}
+
+.item-a {
+  grid-area: a;
+}
+
+.item-b {
+  grid-area: b;
+}
+
+.item-c {
+  grid-area: c;
+}
+
+.item-d {
+  grid-area: d;
+}
+
+.item-e {
+  grid-area: e;
+}
+
+.item-f {
+  grid-area: f;
+}
+
+/* DESKTOPS design */
+@media screen and (min-width: 576px) {
+  .container {
+    /* grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 50px 190px 100px auto 50px;
+    grid-template-areas:
+      "a c c"
+      "b c c"
+      "b e d"
+      "b e ."
+      "f f f"; */
+    /* SHORTHAND syntax */
+    grid-template: "a c c"50px "b c c"190px "b e d"100px "b e ."auto "f f f"50px / 1fr 1fr 1fr;
+  }
+}
