@@ -1,0 +1,39 @@
+/* Declare color variable and widget sizes */
+:root {
+  --menu-bar-width: 60px;
+  --menu-bar-height: 10px;
+  --hamburger-menu-color: #D84282;
+}
+
+/* Set menu properties */
+#menu {
+  background-color: var(--hamburger-menu-color);
+  position: relative;
+  width: var(--menu-bar-width);
+  height: var(--menu-bar-height);
+  margin: 20px;
+}
+
+/* Use pseudo elements to place ONE standard bar
+"display: block" is used to make sure they don't appear inline, but on top of one another */
+#menu::before,
+#menu::after {
+  background-color: var(--hamburger-menu-color);
+  display: block;
+  content: "";
+  width: var(--menu-bar-width);
+  height: var(--menu-bar-height);
+  position: absolute;
+}
+
+/* Add one bar on top */
+#menu::before {
+  left: 0;
+  top: -20px;
+}
+
+/* Add one bar below */
+#menu::after {
+  left: 0;
+  top: 20px;
+}
