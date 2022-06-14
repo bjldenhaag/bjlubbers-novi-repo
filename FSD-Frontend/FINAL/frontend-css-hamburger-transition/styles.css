@@ -1,0 +1,57 @@
+:root {
+    --menu-bar-width: 60px;
+    --menu-bar-height: 10px;
+}
+
+/* Burger menu = 1 base <div> element and 2 pseudo-elements */
+/* Tweezijdige transities: niet-hover -> hover en vice versa */
+
+#menu {
+    background-color: #D84282;
+    position: relative;
+    width: var(--menu-bar-width);
+    height: var(--menu-bar-height);
+}
+
+#menu::before,
+#menu::after {
+    background-color: #D84282;
+    display: block;
+    content: "";
+    width: var(--menu-bar-width);
+    height: var(--menu-bar-height);
+    position: absolute;
+}
+
+#menu::before {
+    left: 0;
+    top: -20px;
+}
+
+#menu::after {
+    left: 0;
+    top: 20px;
+}
+
+.container {
+    /* border: 4px solid blue; */
+    display: inline-block;
+    padding: 20px 0;
+}
+
+.container:hover > #menu {
+    transition: background-color 0.4s;
+    background-color: transparent;
+}
+
+.container:hover > #menu::before {
+    transform: rotate(45deg);
+    transition: transform 0.5s;
+    top: 0;
+}
+
+.container:hover > #menu::after {
+    transform: rotate(-45deg);
+    transition: transform 0.5s;
+    top: 0;
+}

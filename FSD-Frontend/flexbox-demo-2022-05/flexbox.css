@@ -1,0 +1,57 @@
+.container {
+    background-color: #22577A;
+    padding: 20px;
+    height: 200px;
+
+    display: flex;
+    flex-direction: row;
+    /*Hoofdas:*/
+    justify-content: space-between;
+    /*Kruisas:*/
+    align-items: center;
+}
+
+article {
+    background-color: #38A3A5;
+    border: 1px solid black;
+    padding: 20px;
+
+    /*Basisbreedte van 100, hij mag wel groeien maar niet krimpen*/
+    flex-basis: 100px;
+    flex-grow: 1;
+    flex-shrink: 0;
+}
+
+.article-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+span {
+    background-color: orange;
+}
+
+.main-container {
+    background-color: pink;
+    padding: 20px;
+
+    display: flex;
+    flex-direction: row;
+}
+
+aside {
+    background-color: palevioletred;
+    /*Basisbreedte van 100, hij mag wel groeien maar niet krimpen*/
+    flex-basis: 100px;
+    flex-grow: 1;
+    flex-shrink: 0;
+}
+
+section {
+    background-color: indianred;
+    /*!*Basisbreedte van 300, hij mag wel groeien (4 keer zo hard als het andere element) en hij is ook de enige die krimpt als er te weinig ruimte is*/
+    flex-basis: 300px;
+    flex-grow: 4;
+    flex-shrink: 1;
+}

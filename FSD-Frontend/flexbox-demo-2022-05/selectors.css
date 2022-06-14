@@ -1,0 +1,40 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1, h2, h3, h4 {
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    font-size: 34px;
+}
+
+.header-front-page {
+    background-color: palevioletred;
+    border: 2px solid black;
+}
+
+.main-content {
+    background-color: pink;
+    border: 2px solid black;
+}
+
+.main-footer {
+    background-color: mediumslateblue;
+    border: 2px solid black;
+}
+
+button {
+    background-color: darkseagreen;
+    border: none;
+    padding: 8px 30px;
+    color: darkslategrey;
+}
+
+button + button {
+    /*margin-left: 20px;*/
+    border: 1px solid darkslategrey;
+}

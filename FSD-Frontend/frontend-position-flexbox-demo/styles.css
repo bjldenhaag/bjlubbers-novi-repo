@@ -1,0 +1,91 @@
+/*////////////////////////
+    Table of Contents
+    1. Global Styles
+    2. Typography
+    3. Layout
+        3.1 Reusables
+        3.2 Other
+    4. Areas
+        4.1 Header
+        4.2 Introduction
+        etc.
+    5. Media Queries
+////////////////////////*/
+
+/* ------------------------------- 1. Global Styles -------------------------------- */
+
+/*CSS reset*/
+
+* {
+    padding: 0;
+    margin: 0;
+}
+/*Kleurvariabelen*/
+
+/* ------------------------------- 2. Typography ----------------------------------- */
+
+body {
+    font-family: "Helvetica Neue", sans-serif;
+}
+
+h1, h2, h3, h4, h5 {
+    font-family: Avenir, sans-serif;
+}
+
+/* ------------------------------- 3. Layout --------------------------------------- */
+
+/* --------------- 3.1 Reusables ----------------------- */
+
+.outer-container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    border: 1px solid red;
+}
+
+.inner-container {
+    /*als flex item*/
+    flex-basis: 800px;
+    flex-grow: 0;
+    flex-shrink: 1;
+    margin: 0 20px;
+
+    /*als container*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    border: 1px dotted blue;
+}
+
+/* --------------- 3.2 Other --------------------------- */
+
+
+/* ------------------------------- 4. Areas ---------------------------------------- */
+
+/* --------------- 4.1 Header ------------------------- */
+
+header {
+    background-color: palevioletred;
+    position: relative;
+}
+
+.header-content {
+    margin: 50px 0;
+}
+
+.square {
+    width: 20px;
+    height: 20px;
+    background-color: black;
+
+    position: absolute;
+    bottom: 0;
+    left: calc(50% - 10px);
+}
+
+/* --------------- 4.2 Introduction ------------------- */
+
+/* ------------------------------- 5. Media Queries -------------------------------- */
