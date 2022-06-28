@@ -1,0 +1,130 @@
+/* ==================================================
+  TABLE OF CONTENTS
+  1. Globals
+    1.1 CSS Reset and Global Styles
+    1.2 CSS Variables
+  2. Fonts
+  3. Layout 
+  4. Areas
+    4.1 Header
+    4.2 Intro
+    4.3 Projects
+    4.4 Services
+    4.5 Contact Form and Footer
+  5. Media Queries
+  ================================================== */
+
+/* ================================================== */
+/* ========== 1. GLOBAL STYLES AND VARIABLES ========== */
+/* === 1.1 CSS Reset and Global Styles === */
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove default ul list styles and from ol with list role */
+ul,
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Smooth scrolling... */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* ... unless you don't want smooth scrolling --> 
+  this removes animations, transitions and smooth scroll on request */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* === 1.2 CSS Variables === */
+
+:root {
+  --color-standard-text: #0C0C0C;
+  --color-service-text: #7A7A7A;
+  --color-bg-projects: #F3F6F9;
+  --color-purple: #5722CD;
+  --color-purple-light: #F2F0FF;
+  --color-blue: #4B49E8;
+  --color-pink: #ED4385;
+}
+
+/* ================================================== */
+/* ========== 2. FONTS ========== */
+/* Import via Google Fonts: Merriweather and Roboto font families */
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap');
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Merriweather', serif;
+}
+
+/* ================================================== */
+/* ========== 3. LAYOUT ========== */
+
+
+/* ================================================== */
+/* ========== 4. AREAS ========== */
+/* === 4.1 Header === */
+#squiggle-header {
+  color: var();
+}
+
+/* === 4.2 Intro === */
+
+
+/* === 4.3 Projects === */
+
+
+/* === 4.4 Services === */
+
+
+/* === 4.5 Contact Form and Footer === */
+
+
+/* ================================================== */
+/* ========== 5. MEDIA QUERIES ========== */
