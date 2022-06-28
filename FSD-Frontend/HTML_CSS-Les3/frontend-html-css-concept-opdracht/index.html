@@ -21,60 +21,147 @@
     <![endif]-->
 
     <!-- ========== HEADER START ========== -->
-    <header class="outer-container">
+    <header class="outer-container" id="header">
+      <div class="inner-container">
 
-      <!-- Navigation -->
-      <nav class="inner-container nav-content">
-        <ul>
-          <li><a href="#case-studies">Case Studies</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#contact us">Contact Us</a></li>
-        </ul>
-      </nav>
+        <!-- Navigation -->
+        <nav class="header-nav" id="nav">
+          <menu class="nav-menu" id="menu">
+            <li class="nav-item"><a href="#case-studies">Case Studies</a></li>
+            <li class="nav-item"><a href="#services">Services</a></li>
+            <li class="nav-item"><a href="#contact us">Contact Us</a></li>
+          </menu>
+        </nav>
 
-      <!-- Call to Action -->
-      <section class="inner-container header-content">
-        <h1>Your website is an investment in the succes of your business</h1>
+        <!-- Call to Action -->
+        <section class="hero-content text-props">
+          <h1>Your website is an investment in the succes of your business</h1>
 
-        <p id="header-lg-text">We are here to help you succeed</p>
+          <p>We are here to help you succeed</p>
 
-        <button>Let&#39;s work together</button>
-      </section>
+          <button type="button" class="hero-button">Let&#39;s work together</button>
+        </section>
+      </div>
 
-      <img src="assets/squiggle_line.svg" alt="squiggle image" class="squiggle-img" id="squiggle-header">
+      <div class="squiggle"></div>
     </header>
     <!-- ========== HEADER END ========== -->
-    <!-- ============================================================ -->
+
     <!-- ========== MAIN START ========== -->
     <main>
       <!-- Introduction -->
-      <section class="inner-container">
+      <section class="outer-container" id="introduction">
+        <article class="inner-container layout-props text-props">
+          <h2>Rekupe is a digital agency in Los Angeles.</h2>
+          <h2>We use strategic UX, SEO optimization and beautiful visual designs to help your
+            business grow.</h2>
+          <h2>We see every project as a fresh opportunity, pushing ourselves to create new digital
+            experiences.</h2>
 
+          <p id="intro-contact">Have a question? <a href="#contact-form" id="intro-link">Click here</a> to contact us!
+          </p>
+        </article>
       </section>
 
-      <!-- ============================================================ -->
       <!-- Projects -->
-      <section class="inner-container">
+      <section class="outer-container" id="projects">
+        <div class="inner-container layout-props">
+          <article class="projects-article">
+            <span class="projects-img-container">
+              <img src="./assets/work-image-01.jpeg" alt="Work image 1">
+            </span>
 
+            <div class="projects-content">
+              <h3>Rolling Stone</h3>
+              <div class="projects-squiggle"></div>
+              <p>You know Rolling Stone. It&#39;s the definitive voice in music, politics and culture. It&#39;s a global
+                icon.</p>
+              <a href="#" class="projects-link">View project</a>
+            </div>
+          </article>
+
+          <article class="projects-article">
+            <span class="projects-img-container">
+              <img src="./assets/work-image-02.jpeg" alt="Work image 2">
+            </span>
+
+            <div class="projects-content">
+              <h3>Variety</h3>
+              <div class="projects-squiggle"></div>
+              <p>Variety is an industry leader for breaking entertainment news, reviews and box office results with
+                archive of content dating back to 1905.</p>
+              <a href="#" class="projects-link">View project</a>
+            </div>
+          </article>
+
+          <article class="projects-article">
+            <span class="projects-img-container">
+              <img src="./assets/work-image-03.jpeg" alt="Work image 3">
+            </span>
+
+            <div class="projects-content">
+              <h3>Worth</h3>
+              <div class="projects-squiggle"></div>
+              <p>A global media platform connecting a community that embraces worth beyond wealth.</p>
+              <a href="#" class="projects-link">View project</a>
+            </div>
+          </article>
+        </div>
       </section>
 
       <!-- Services -->
-      <section class="inner-container">
+      <section class="outer-container" id="services">
+        <div class="inner-container layout-props">
+          <article class="services-box">
+            <img src="./assets/icon_web-design.svg" alt="Web design icon" class="services-icon">
+            <h4 class="services-heading"></h4>
+            <p>Good web design is how companies stand out from their competitors. High quality web design leads to increased user conversion and engagement. Through a proven web design process, we help clients launch websites and products that improve on their bottom line.</p>
+          </article>
 
+          <article class="services-box">
+            <img src="./assets/icon_web-development.svg" alt="Web development icon" class="services-icon">
+            <h4 class="services-heading"></h4>
+            <p>Modern websites need to be responsive and fully functional at all sizes. We develop all of our sites with a mobile first approach and ensure that our code quality is clean, organized and performant. Already have a design but need it developed? We&#39;re here to help!</p>
+          </article>
+
+          <article class="services-box">
+            <img src="./assets/icon_ux.svg" alt="UX icon" class="services-icon">
+            <h4 class="services-heading"></h4>
+            <p>In order to build successful products you have to understand the user. We create user personas, wireframes and prototypes to test with users. This allows us to gather feedback which helps to shape the product and can quickly eliminate potential risks &#8722; saving you time and money.</p>
+          </article>
+
+          <article class="services-box">
+            <img src="./assets/icon_graphic-design.svg" alt="Graphic Design icon" class="services-icon">
+            <h4 class="services-heading"></h4>
+            <p>Nike, Apple, Coca-Cola, Starbucks. What do all of these brands have in common? Easily recognizable logos and brand identity. The best brands stand out from the crowd by having a clear and unique point of view. We will work with you to understand your vision and help create a unique brand identity and style guide for your company.</p>
+          </article>
+
+          <article class="services-box">
+            <img src="./assets/icon_seo.svg" alt="SEO icon" class="services-icon">
+            <h4 class="services-heading"></h4>
+            <p>Do you want your site to rank higher in search results? Google is constantly changing their algorithms for how they rank pages. Don&#39;t worry about constantly playing catch-up. We will make sure your website it optimized, providing you the best opportunities for organic search exposure.</p>
+          </article>
+
+          <article class="services-box">
+            <img src="./assets/icon_copywriting.svg" alt="Copyrighting icon" class="services-icon">
+            <h4 class="services-heading"></h4>
+            <p>Brand messaging needs to be clear, direct and easy to understand to be effective. A unique tone of voice will help you stand out from the crowd and build brand loyalty. We work with you to establish your brand bible and ensure your messaging is focused and targeted.</p>
+          </article>
+        </div>
       </section>
     </main>
     <!-- ========== MAIN END ========== -->
-    <!-- ================================================== -->
+
     <!-- ========== FOOTER START ========== -->
     <footer class="outer-container">
       <!-- Contact Form -->
-      <section class="inner-container footer-content">
-
+      <section class="inner-container footer-content" id="contact-form">
+        form
       </section>
 
       <!-- Copyright -->
-      <p class="copyright footer-content inner-container">
-
+      <p class="inner-container footer-content copyright">
+        copyright
       </p>
     </footer>
     <!-- ========== FOOTER END ========== -->

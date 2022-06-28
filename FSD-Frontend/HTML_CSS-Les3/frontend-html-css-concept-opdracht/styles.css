@@ -22,23 +22,25 @@
 *::before,
 *::after {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-/* Remove default margin */
-body,
-h1,
-h2,
-h3,
-h4,
-p,
-figure,
-blockquote,
-dl,
-dd {
-  margin: 0;
+/* No changes in link text after  */
+a,
+a:visited,
+a:link {
+  text-decoration: none;
+  color: var(--color-purple);
+}
+
+/* Make sure pointer is shown on hover over button */
+button:hover {
+  cursor: pointer;
 }
 
 /* Remove default ul list styles and from ol with list role */
+menu,
 ul,
 ol[role='list'] {
   list-style: none;
@@ -73,6 +75,20 @@ html:focus-within {
   }
 }
 
+button {
+  font-size: 0.9rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #FFFFFF;
+  background-color: var(--color-pink);
+  border: none;
+  border-radius: 40px;
+  box-shadow: 0 4px 8px 4px rgba(0, 0, 0, 0.2);
+  padding: 24px 40px;
+  margin: 24px 0;
+}
+
 /* === 1.2 CSS Variables === */
 
 :root {
@@ -88,10 +104,13 @@ html:focus-within {
 /* ================================================== */
 /* ========== 2. FONTS ========== */
 /* Import via Google Fonts: Merriweather and Roboto font families */
-@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;,600;0,700;1,400;1,700&family=Roboto:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap');
 
 body {
-  font-family: 'Roboto', sans-serif;
+  color: var(--color-standard-text);
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+  font-weight: 300;
 }
 
 h1,
@@ -100,28 +119,233 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Merriweather', serif;
+  font-family: 'Merriweather', 'Times New Roman', serif;
+}
+
+h1,
+h2,
+h4,
+h5 {
+  padding: 20px 0;
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+  margin: 20px 0;
+}
+
+h4 {
+  font-size: 1.25rem;
+}
+
+p {
+  margin: 12px 0;
+}
+
+.text-props {
+  max-width: 840px;
+  text-align: center;
 }
 
 /* ================================================== */
 /* ========== 3. LAYOUT ========== */
+.outer-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: center;
+}
 
+.inner-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 0 1 1600px;
+  margin: 0 20px;
+  z-index: 2;
+}
+
+.layout-props {
+  padding: 200px 0 100px 0;
+}
 
 /* ================================================== */
 /* ========== 4. AREAS ========== */
 /* === 4.1 Header === */
-#squiggle-header {
-  color: var();
+header {
+  background: rgb(72, 69, 228);
+  background: linear-gradient(90deg, rgba(72, 69, 228, 1) 0%, rgba(87, 34, 205, 1) 100%, rgba(87, 34, 205, 1) 100%);
+  color: #FFFFFF;
+  padding: 20px;
+  position: relative;
+}
+
+.header-nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  background-color: transparent;
+  width: 100%;
+}
+
+.header-nav menu {
+  display: flex;
+  flex: 0 1 480px;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.nav-item a {
+  color: #FFFFFF;
+  text-decoration: none;
+  font-size: 1.1rem;
+}
+
+/* Hero */
+.hero-content {
+  padding: 100px 0;
+  margin-bottom: 80px;
+  font-size: 1.75rem;
+}
+
+.hero-content h1 {
+  color: #fff;
+}
+
+.squiggle {
+  background-image: url('./assets/squiggle_line_stripe.svg');
+  display: block;
+  width: 80px;
+  height: 100px;
+  margin: 60px 0 0 0;
+  /* Haal squiggle uit workflow voor positionering */
+  position: absolute;
+  /* Place squiggle on parent bottom */
+  bottom: 0px;
+  /* Calculate position halfway of parent's position, minus 50% of img width 
+  This places the center of the squiggle in the middle */
+  left: calc(50% - 40px);
 }
 
 /* === 4.2 Intro === */
+#introduction {
+  background-color: #FFFFFF;
+  color: var(--color-purple);
+  position: relative;
+}
 
+#intro-contact {
+  margin-top: 100px;
+}
+
+#introduction p {
+  color: var(--color-standard-text);
+}
+
+#intro-link:hover {
+  font-weight: 700;
+}
 
 /* === 4.3 Projects === */
+#projects {
+  background-color: var(--color-bg-projects);
+  position: relative;
+  padding: 100px 0 0 0;
+}
 
+.projects-article {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 0 100px 0;
+}
+
+/* Row-reverse exercise with the first and third article */
+.projects-article:nth-of-type(odd) {
+  flex-direction: row-reverse;
+}
+
+/* Wrapper properties */
+.projects-img-container {
+  /* Img always had 100% width -> wrapper gets max width via flex-basis (800px) 
+  This makes sure the image will always adjust its size to its parent element */
+  flex: 0 1 800px;
+}
+
+/* Properties of images themselves */
+.projects-img-container img {
+  box-shadow: 0 28px 16px -12px rgba(0, 0, 0, 0.2);
+}
+
+/* Projects text content */
+.projects-content {
+  /* Container width for text content > 480px */
+  flex: 0 1 480px;
+  padding: 0 48px 48px 48px;
+}
+
+.projects-content p {
+  margin: 40px 0;
+  font-weight: 400;
+}
+
+.projects-squiggle {
+  background-image: url('./assets/squiggle_line.svg');
+  width: 60px;
+  height: 6px;
+  margin-top: 24px;
+}
+
+.projects-link {
+  font-weight: 500;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.projects-link:hover {
+  font-weight: 700;
+}
+
+.projects-link::after {
+  background-color: var(--color-purple);
+  display: inline-block;
+  /* Base width: 16px; change width on hover */
+  width: 16px;
+  height: 1px;
+  margin: 0 0 4px 12px;
+  content: '';
+  transition: all 0.2s ease-in-out
+}
+
+.projects-link:hover::after {
+  width: 56px;
+}
 
 /* === 4.4 Services === */
+#services {
+  background-color: #FFFFFF;
+  padding: 100px;
+  position: relative;
+}
 
+#services div {}
+
+.services-box {}
+
+.services-icon {
+  width: 80px;
+}
 
 /* === 4.5 Contact Form and Footer === */
 
