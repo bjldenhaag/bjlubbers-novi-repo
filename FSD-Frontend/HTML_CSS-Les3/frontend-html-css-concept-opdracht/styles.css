@@ -1,3 +1,8 @@
+/* ========== IMPORTS ========== */
+/* Import via Google Fonts: Merriweather and Roboto font families */
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,600;0,700;1,400;1,700&family=Roboto:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap');
+
+
 /* ==================================================
   TABLE OF CONTENTS
   1. Globals
@@ -10,7 +15,8 @@
     4.2 Intro
     4.3 Projects
     4.4 Services
-    4.5 Contact Form and Footer
+    4.5 Contact Form
+    4.6 Footer
   5. Media Queries
   ================================================== */
 
@@ -26,7 +32,7 @@
   padding: 0;
 }
 
-/* No changes in link text after  */
+/* No changes in link text after visiting */
 a,
 a:visited,
 a:link {
@@ -39,14 +45,14 @@ button:hover {
   cursor: pointer;
 }
 
-/* Remove default ul list styles and from ol with list role */
+/* Remove default menu, ul and ol list styles */
 menu,
 ul,
 ol[role='list'] {
   list-style: none;
 }
 
-/* Make images easier to work with */
+/* Set default width for images in their containers to full */
 img,
 picture {
   max-width: 100%;
@@ -92,6 +98,8 @@ button {
 /* === 1.2 CSS Variables === */
 
 :root {
+  --color-bg-fallback: rgb(72, 69, 228);
+  --color-bg-gradient: linear-gradient(90deg, rgba(72, 69, 228, 1) 0%, rgba(87, 34, 205, 1) 100%, rgba(87, 34, 205, 1) 100%);
   --color-standard-text: #0C0C0C;
   --color-service-text: #7A7A7A;
   --color-bg-projects: #F3F6F9;
@@ -103,9 +111,6 @@ button {
 
 /* ================================================== */
 /* ========== 2. FONTS ========== */
-/* Import via Google Fonts: Merriweather and Roboto font families */
-@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;,600;0,700;1,400;1,700&family=Roboto:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap');
-
 body {
   color: var(--color-standard-text);
   font-family: 'Roboto', Arial, Helvetica, sans-serif;
@@ -123,32 +128,63 @@ h6 {
 }
 
 h1,
-h2,
-h4,
-h5 {
-  padding: 20px 0;
-}
-
-h1 {
-  font-size: 3rem;
-  font-weight: 700;
-}
-
 h2 {
-  font-size: 1.5rem;
+  font-size: 3rem;
+  padding: 16px 0;
 }
 
 h3 {
-  font-size: 1.5rem;
-  margin: 20px 0;
+  font-size: 1.6rem;
 }
 
 h4 {
-  font-size: 1.25rem;
+  font-size: 1.5rem;
+  padding: 12px 0;
+  margin: 24px 0;
+}
+
+h4::after {
+  display: block;
+  content: '';
+  margin: 24px 0 0;
+  width: 60px;
+  height: 6px;
+  background-image: url(./assets/squiggle_line.svg);
+}
+
+h5 {
+  font-size: 1.5rem;
+  padding: 12px 0;
+}
+
+h6 {
+  font-size: 1.5rem;
+  padding: 12px 0;
+  line-height: 1.5;
 }
 
 p {
   margin: 12px 0;
+}
+
+/* ================================================== */
+/* ========== 3. LAYOUT ========== */
+/* Outer container is full width with horizontally centered content */
+.outer-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+
+/* Inner container max 1600px for wide-screens; may shrink, but not grow */
+.inner-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  flex: 0 1 1400px;
+  margin: 0 20px;
+  z-index: 2;
 }
 
 .text-props {
@@ -156,58 +192,79 @@ p {
   text-align: center;
 }
 
-/* ================================================== */
-/* ========== 3. LAYOUT ========== */
-.outer-container {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  justify-content: center;
-}
-
-.inner-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  flex: 0 1 1600px;
-  margin: 0 20px;
-  z-index: 2;
-}
-
 .layout-props {
-  padding: 200px 0 100px 0;
+  padding: 160px 0 80px 0;
+}
+
+.bottom-triangle {
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  bottom: 0;
+  border-right: 100vw solid transparent;
+  border-bottom: 50px solid #FFFFFF;
+}
+
+.top-triangle {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  border-top: 50px solid #FFFFFF;
+  border-left: 100vw solid transparent;
 }
 
 /* ================================================== */
 /* ========== 4. AREAS ========== */
 /* === 4.1 Header === */
-header {
-  background: rgb(72, 69, 228);
-  background: linear-gradient(90deg, rgba(72, 69, 228, 1) 0%, rgba(87, 34, 205, 1) 100%, rgba(87, 34, 205, 1) 100%);
+#header {
+  background: var(--color-bg-fallback);
+  background: var(--color-bg-gradient);
   color: #FFFFFF;
-  padding: 20px;
+  padding: 28px;
   position: relative;
+}
+
+#header::before {
+  background-image: url(./assets/squiggle_line_stripe.svg);
+  content: '';
+  display: block;
+  position: absolute;
+  height: 100px;
+  width: 80px;
+  bottom: 20px;
+  left: calc(50% - 40px);
+}
+
+#header::after {
+  background-image: url(./assets/noise-texture.png);
+  background-position: top center;
+  background-size: auto;
+  content: '';
+  display: block;
+  left: 0;
+  top: 0;
+  position: absolute;
+  height: 100%;
+  width: 100%;
 }
 
 .header-nav {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
-  background-color: transparent;
   width: 100%;
 }
 
 .header-nav menu {
   display: flex;
-  flex: 0 1 480px;
+  flex: 0 1 400px;
   flex-direction: row;
   justify-content: space-between;
 }
 
-.nav-item a {
+.header-nav menu a {
   color: #FFFFFF;
-  text-decoration: none;
-  font-size: 1.1rem;
 }
 
 /* Hero */
@@ -215,10 +272,6 @@ header {
   padding: 100px 0;
   margin-bottom: 80px;
   font-size: 1.75rem;
-}
-
-.hero-content h1 {
-  color: #fff;
 }
 
 .squiggle {
@@ -243,12 +296,25 @@ header {
   position: relative;
 }
 
-#intro-contact {
-  margin-top: 100px;
+#introduction::before {
+  display: block;
+  content: 'hello';
+  color: var(--color-purple-light);
+  font-size: 34rem;
+  opacity: 0.6;
+  font-weight: 600;
+  left: 0;
+  top: 0;
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  letter-spacing: -12px;
 }
 
-#introduction p {
+#intro-contact {
+  margin-top: 100px;
   color: var(--color-standard-text);
+  font-weight: 500;
 }
 
 #intro-link:hover {
@@ -258,8 +324,23 @@ header {
 /* === 4.3 Projects === */
 #projects {
   background-color: var(--color-bg-projects);
-  position: relative;
   padding: 100px 0 0 0;
+  position: relative;
+}
+
+/* Floating letters */
+#projects::before {
+  display: block;
+  content: 'work';
+  color: #FFFFFF;
+  font-size: 34rem;
+  font-weight: 600;
+  left: 0;
+  top: 0;
+  letter-spacing: -16px;
+  position: absolute;
+  text-align: center;
+  width: 100%;
 }
 
 .projects-article {
@@ -270,7 +351,7 @@ header {
   margin: 0 0 100px 0;
 }
 
-/* Row-reverse exercise with the first and third article */
+/* Row-reverse exercise with the first and third article (odd numbers) */
 .projects-article:nth-of-type(odd) {
   flex-direction: row-reverse;
 }
@@ -285,12 +366,13 @@ header {
 /* Properties of images themselves */
 .projects-img-container img {
   box-shadow: 0 28px 16px -12px rgba(0, 0, 0, 0.2);
+  width: 100%;
 }
 
 /* Projects text content */
 .projects-content {
-  /* Container width for text content > 480px */
-  flex: 0 1 480px;
+  /* If >480px space, container may not grow further; same goes for shrinking */
+  flex: 0 0 480px;
   padding: 0 48px 48px 48px;
 }
 
@@ -301,9 +383,9 @@ header {
 
 .projects-squiggle {
   background-image: url('./assets/squiggle_line.svg');
-  width: 60px;
-  height: 6px;
   margin-top: 24px;
+  height: 6px;
+  width: 60px;
 }
 
 .projects-link {
@@ -339,16 +421,202 @@ header {
   position: relative;
 }
 
-#services div {}
+/* Floating letters behind content */
+#services::before {
+  display: block;
+  content: 'services';
+  color: var(--color-purple-light);
+  opacity: 0.6;
+  font-size: 18.5rem;
+  font-weight: 500;
+  letter-spacing: -4px;
+  left: 0;
+  top: 48px;
+  position: absolute;
+  text-align: center;
+  width: 100%;
+}
 
-.services-box {}
+#services>div {
+  display: flex;
+  align-items: inherit;
+  flex-flow: row wrap;
+  gap: 40px;
+  justify-content: center;
+}
+
+.services-box {
+  display: flex;
+  flex: 0 1 380px;
+  flex-direction: column;
+  padding: 40px;
+  background-color: #FFFFFF;
+  border: 1px solid var(--color-purple);
+  box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 0.2);
+  color: var(--color-service-text);
+  font-size: 1rem;
+}
 
 .services-icon {
   width: 80px;
 }
 
-/* === 4.5 Contact Form and Footer === */
+.services-heading {
+  color: var(--color-purple);
+  font-size: 1.5rem;
+}
 
+/* === 4.5 Contact Form === */
+#contact-section {
+  background: var(--color-bg-fallback);
+  background: var(--color-bg-gradient);
+  color: #FFFFFF;
+  position: relative;
+}
+
+#contact-section::after {
+  content: '';
+  display: block;
+  background-image: url('./assets/noise-texture.png');
+  background-position: top center;
+  background-size: auto;
+  opacity: 0.75;
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  width: 100%;
+}
+
+.contact-form input,
+.contact-form textarea {
+  background-color: #FFFFFF;
+  border: 1px solid var(--color-standard-text);
+  border-radius: 8px;
+  display: block;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+  padding: 20px;
+  width: 100%;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: var(--color-standard-text);
+}
+
+#contact-section label {
+  display: flex;
+  flex-flow: column wrap;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 20px 0;
+}
+
+#contact-section button {
+  width: 240px;
+  align-self: center;
+}
+
+/* === 4.6 Footer === */
+#footer {
+  background-color: #000000;
+  color: #FFFFFF;
+  font-size: 1rem;
+  text-align: center;
+  padding: 20px 0;
+}
 
 /* ================================================== */
 /* ========== 5. MEDIA QUERIES ========== */
+
+@media screen and (max-width: 576px) {
+
+  h1,
+  h2 {
+    font-size: 3rem;
+    padding: 16px 0;
+  }
+
+  h3 {
+    font-size: 1.6rem;
+  }
+
+  h6 {
+    font-size: 1.5rem;
+    line-height: 1.5;
+    padding: 12px 0;
+  }
+
+  .header-nav {
+    justify-content: center;
+  }
+
+  .header-nav a {
+    font-size: 1rem;
+    font-weight: 600;
+  }
+
+  #introduction article {
+    padding: 100px 0;
+  }
+
+  #introduction::before {
+    font-size: 8rem;
+    letter-spacing: -10px;
+    top: 20px;
+  }
+
+  #intro-link {
+    margin: 48px 0 0 0;
+  }
+
+  #projects::before {
+    font-size: 8rem;
+    letter-spacing: -5px;
+    top: 40px;
+  }
+
+  #projects {
+    padding: 0;
+  }
+
+  .projects-article:nth-of-type(odd),
+  .projects-article {
+    flex-direction: column;
+    margin: 0;
+  }
+
+  .projects-img-container {
+    flex-basis: auto;
+  }
+
+  .projects-content {
+    padding: 0 0 50px 0;
+    flex-basis: auto;
+  }
+
+  #services {
+    padding: 50px 0;
+  }
+
+  #services::before {
+    font-size: 100px;
+    top: 60px;
+  }
+
+  #services>div {
+    padding: 100px 0 48px 0;
+  }
+
+  #contact>div {
+    padding: 100px 0 0 0;
+  }
+}

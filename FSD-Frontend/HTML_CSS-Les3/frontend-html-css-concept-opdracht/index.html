@@ -26,10 +26,10 @@
 
         <!-- Navigation -->
         <nav class="header-nav" id="nav">
-          <menu class="nav-menu" id="menu">
-            <li class="nav-item"><a href="#case-studies">Case Studies</a></li>
-            <li class="nav-item"><a href="#services">Services</a></li>
-            <li class="nav-item"><a href="#contact us">Contact Us</a></li>
+          <menu id="menu">
+            <li><a href="#projects">Case Studies</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact-section">Contact Us</a></li>
           </menu>
         </nav>
 
@@ -39,11 +39,13 @@
 
           <p>We are here to help you succeed</p>
 
-          <button type="button" class="hero-button">Let&#39;s work together</button>
+          <form action="#contact-section">
+            <button type="submit" class="hero-button">Let&#39;s work together</button>
+          </form>
         </section>
       </div>
 
-      <div class="squiggle"></div>
+      <div class="bottom-triangle"></div>
     </header>
     <!-- ========== HEADER END ========== -->
 
@@ -52,11 +54,11 @@
       <!-- Introduction -->
       <section class="outer-container" id="introduction">
         <article class="inner-container layout-props text-props">
-          <h2>Rekupe is a digital agency in Los Angeles.</h2>
-          <h2>We use strategic UX, SEO optimization and beautiful visual designs to help your
-            business grow.</h2>
-          <h2>We see every project as a fresh opportunity, pushing ourselves to create new digital
-            experiences.</h2>
+          <h6>Rekupe is a digital agency in Los Angeles.</h6>
+          <h6>We use strategic UX, SEO optimization and beautiful visual designs to help your
+            business grow.</h6>
+          <h6>We see every project as a fresh opportunity, pushing ourselves to create new digital
+            experiences.</h6>
 
           <p id="intro-contact">Have a question? <a href="#contact-form" id="intro-link">Click here</a> to contact us!
           </p>
@@ -65,6 +67,8 @@
 
       <!-- Projects -->
       <section class="outer-container" id="projects">
+        <div class="top-triangle"></div>
+
         <div class="inner-container layout-props">
           <article class="projects-article">
             <span class="projects-img-container">
@@ -72,8 +76,7 @@
             </span>
 
             <div class="projects-content">
-              <h3>Rolling Stone</h3>
-              <div class="projects-squiggle"></div>
+              <h4>Rolling Stone</h4>
               <p>You know Rolling Stone. It&#39;s the definitive voice in music, politics and culture. It&#39;s a global
                 icon.</p>
               <a href="#" class="projects-link">View project</a>
@@ -86,8 +89,7 @@
             </span>
 
             <div class="projects-content">
-              <h3>Variety</h3>
-              <div class="projects-squiggle"></div>
+              <h4>Variety</h4>
               <p>Variety is an industry leader for breaking entertainment news, reviews and box office results with
                 archive of content dating back to 1905.</p>
               <a href="#" class="projects-link">View project</a>
@@ -100,13 +102,14 @@
             </span>
 
             <div class="projects-content">
-              <h3>Worth</h3>
-              <div class="projects-squiggle"></div>
+              <h4>Worth</h4>
               <p>A global media platform connecting a community that embraces worth beyond wealth.</p>
               <a href="#" class="projects-link">View project</a>
             </div>
           </article>
         </div>
+
+        <div class="bottom-triangle"></div>
       </section>
 
       <!-- Services -->
@@ -114,54 +117,90 @@
         <div class="inner-container layout-props">
           <article class="services-box">
             <img src="./assets/icon_web-design.svg" alt="Web design icon" class="services-icon">
-            <h4 class="services-heading"></h4>
-            <p>Good web design is how companies stand out from their competitors. High quality web design leads to increased user conversion and engagement. Through a proven web design process, we help clients launch websites and products that improve on their bottom line.</p>
+            <h4 class="services-heading">Web Design</h4>
+            <p>Good web design is how companies stand out from their competitors. High quality web design leads to
+              increased user conversion and engagement. Through a proven web design process, we help clients launch
+              websites and products that improve on their bottom line.</p>
           </article>
 
           <article class="services-box">
             <img src="./assets/icon_web-development.svg" alt="Web development icon" class="services-icon">
-            <h4 class="services-heading"></h4>
-            <p>Modern websites need to be responsive and fully functional at all sizes. We develop all of our sites with a mobile first approach and ensure that our code quality is clean, organized and performant. Already have a design but need it developed? We&#39;re here to help!</p>
+            <h4 class="services-heading">Web Development</h4>
+            <p>Modern websites need to be responsive and fully functional at all sizes. We develop all of our sites with
+              a mobile first approach and ensure that our code quality is clean, organized and performant. Already have
+              a design but need it developed? We&#39;re here to help!</p>
           </article>
 
           <article class="services-box">
             <img src="./assets/icon_ux.svg" alt="UX icon" class="services-icon">
-            <h4 class="services-heading"></h4>
-            <p>In order to build successful products you have to understand the user. We create user personas, wireframes and prototypes to test with users. This allows us to gather feedback which helps to shape the product and can quickly eliminate potential risks &#8722; saving you time and money.</p>
+            <h4 class="services-heading">User Experience</h4>
+            <p>In order to build successful products you have to understand the user. We create user personas,
+              wireframes and prototypes to test with users. This allows us to gather feedback which helps to shape the
+              product and can quickly eliminate potential risks &#8722; saving you time and money.</p>
           </article>
 
           <article class="services-box">
             <img src="./assets/icon_graphic-design.svg" alt="Graphic Design icon" class="services-icon">
-            <h4 class="services-heading"></h4>
-            <p>Nike, Apple, Coca-Cola, Starbucks. What do all of these brands have in common? Easily recognizable logos and brand identity. The best brands stand out from the crowd by having a clear and unique point of view. We will work with you to understand your vision and help create a unique brand identity and style guide for your company.</p>
+            <h4 class="services-heading">Logo Design + Branding</h4>
+            <p>Nike, Apple, Coca-Cola, Starbucks. What do all of these brands have in common? Easily recognizable logos
+              and brand identity. The best brands stand out from the crowd by having a clear and unique point of view.
+              We will work with you to understand your vision and help create a unique brand identity and style guide
+              for your company.</p>
           </article>
 
           <article class="services-box">
             <img src="./assets/icon_seo.svg" alt="SEO icon" class="services-icon">
-            <h4 class="services-heading"></h4>
-            <p>Do you want your site to rank higher in search results? Google is constantly changing their algorithms for how they rank pages. Don&#39;t worry about constantly playing catch-up. We will make sure your website it optimized, providing you the best opportunities for organic search exposure.</p>
+            <h4 class="services-heading">SEO</h4>
+            <p>Do you want your site to rank higher in search results? Google is constantly changing their algorithms
+              for how they rank pages. Don&#39;t worry about constantly playing catch-up. We will make sure your website
+              it optimized, providing you the best opportunities for organic search exposure.</p>
           </article>
 
           <article class="services-box">
             <img src="./assets/icon_copywriting.svg" alt="Copyrighting icon" class="services-icon">
-            <h4 class="services-heading"></h4>
-            <p>Brand messaging needs to be clear, direct and easy to understand to be effective. A unique tone of voice will help you stand out from the crowd and build brand loyalty. We work with you to establish your brand bible and ensure your messaging is focused and targeted.</p>
+            <h4 class="services-heading">Copy Writing</h4>
+            <p>Brand messaging needs to be clear, direct and easy to understand to be effective. A unique tone of voice
+              will help you stand out from the crowd and build brand loyalty. We work with you to establish your brand
+              bible and ensure your messaging is focused and targeted.</p>
           </article>
+        </div>
+      </section>
+
+      <!-- Contact Form -->
+      <section class="outer-container" id="contact-section">
+        <div class="top-triangle"></div>
+
+        <div class="inner-container text-props layout-props">
+          <h2>Let&#39;s work together</h2>
+          <p>Have a question? Need a quote? Let us know!</p>
+          <form class="contact-form">
+            <label for="input-name">
+              Name
+              <input type="text" name="name" id="input-name" placeholder="Name">
+            </label>
+
+            <label for="input-email">
+              E-mail
+              <input type="email" name="email" id="input-email" placeholder="E-mail address">
+            </label>
+
+            <label for="input-message">
+              Message
+              <textarea name="message" id="input-message" placeholder="Message" cols="30" rows="10"></textarea>
+            </label>
+
+            <button type="submit">Send</button>
+          </form>
         </div>
       </section>
     </main>
     <!-- ========== MAIN END ========== -->
 
     <!-- ========== FOOTER START ========== -->
-    <footer class="outer-container">
-      <!-- Contact Form -->
-      <section class="inner-container footer-content" id="contact-form">
-        form
-      </section>
-
+    <footer class="outer-container" id="footer">
       <!-- Copyright -->
-      <p class="inner-container footer-content copyright">
-        copyright
+      <p class="footer-content copyright">
+        Business website opdracht &copy; NOVI Hogeschool 2022
       </p>
     </footer>
     <!-- ========== FOOTER END ========== -->
